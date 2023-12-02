@@ -32,3 +32,16 @@ what was going on and I was able to correct the problem.
 On the whole, the lexing puzzle was a little bit of an extreme ramp up
 compared to previous years. I'm looking forward to a challenging
 coding season this Advent!
+
+# Day 2 - Bash Scripting
+I decided to do today's problems in bash. Its IFS operation made it easy 
+to iterate over the individual plays in the game. I used two programs 
+"xargs" and "cut" to easily clean up and split the input. From there, it
+was just a few simple bash tests for both parts. In the first, it was
+testing against 12, 13, and 14. For the second it was tracking the max
+for each.
+
+I got both of these in the first try, so today's problems were simpler.
+I wonder if this year we will have fluctuating complexity. Though I
+suppose yesterday's problems would have been easier had I used a regex
+library or something!
