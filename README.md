@@ -45,3 +45,19 @@ I got both of these in the first try, so today's problems were simpler.
 I wonder if this year we will have fluctuating complexity. Though I
 suppose yesterday's problems would have been easier had I used a regex
 library or something!
+
+# Day 3 - Python Programming
+More parsing! I had thought about coding this one using list comprehension and
+some functional things, but with 2d operations it turns into a garbled mess. So
+I did this with straight up imperative python. I had a slight problem on the
+first part with having numbers that were too high. The reason was that 
+I was counting end lines as part labels. Checking to make sure I wasn't 
+looking at \n did the trick! The second part was quite simple, though
+I did have to modify my neighborhood function to do it.
+
+My code is concise, but I would refactor my functions in the second
+one if this were a real product. The reason is that the functions
+are tightly coupled to the global scope. Still, it gets the job done!
+
+If we have another parsing program, I may just use a parser generator.
+I've never solved one of these using YACC, but I don't see why I couldn't!
