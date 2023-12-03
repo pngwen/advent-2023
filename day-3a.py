@@ -47,7 +47,6 @@ for y in range(0, h):
                 total += num
             num = 0
             count = False
-            negative = False
             continue
 
         num = num * 10 + int(c)
