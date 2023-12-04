@@ -61,3 +61,13 @@ are tightly coupled to the global scope. Still, it gets the job done!
 
 If we have another parsing program, I may just use a parser generator.
 I've never solved one of these using YACC, but I don't see why I couldn't!
+
+# Day 4 - PHP Programming
+Ok, so this has a bit of parsing but it's not like the other peculiar parsing
+puzzles. So I decided to do this in a non-parsing language. I did this one
+in php. I tried to make it a bit clunky as that is the php style. It's awful,
+but it gets the job done.
+
+Today was far easier than the ones before it. This is certainly an odd year 
+complexity wise! I had no real issues with this one, other than getting a 
+little bit tired of typing "$" over and over.
