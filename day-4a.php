@@ -28,7 +28,6 @@ while(!feof($stdin)) {
         if(!strlen($num)) continue;
         if(array_key_exists($num, $winning)) {
             $count++;
-            $winning[$num];
         }
     }
 
