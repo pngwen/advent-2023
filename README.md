@@ -71,3 +71,31 @@ but it gets the job done.
 Today was far easier than the ones before it. This is certainly an odd year 
 complexity wise! I had no real issues with this one, other than getting a 
 little bit tired of typing "$" over and over.
+
+# Day 5 - TCL Programming
+I was amused by yet another strong text parsing presence, and so I decided
+to code in TCL today. That made processing the input a snap! I love TCL,
+such a nice elegant language.
+
+The first problem I worked out quickly by doing some interval computation
+magic. But then I got to the second part. Nearly 24 hours in, and my TCL
+script is still running. I sure picked a fine day for some elegant
+string processing. I could rewrite it in a faster language, but then I am
+curious to see if the mighty strings will win out.
+
+# Day 6 - C++ Programming
+Today was super simple. My first attempt worked in both cases, where the
+hardest part was really switching my ints to long longs. Part 1 worked
+on first compile and part 2 I had to compile twice after I realized 
+the data type needs. Still, that change was made by search and replace.
+
+I guess today was meant to be a real time race to get first answer? This
+is like day 1 stuff! Still, I have kids and a job so I did not get to 
+stay up until the problem was posted. 
+
+I used C++ because I thought something intense may be coming on the
+part 2 problem, and I was burned yesterday. It looks like I spent
+another fast language on nothing! I think I'll keep zig in the hole 
+for the next number cruncher.
+
+Oh, and yes my TCL program is still running...
