@@ -83,6 +83,12 @@ script is still running. I sure picked a fine day for some elegant
 string processing. I could rewrite it in a faster language, but then I am
 curious to see if the mighty strings will win out.
 
+**UPDATE**: The program completed its run on December 8th at 2:00 PM.
+It gave the right answer too, so my little Tcl program was able to 
+solve this one via brute force in approximately 72 hours of continuous
+running. I didn't generate all of the arrays, and so that meant it really
+didn't have any memory issue. Great fun!
+
 # Day 6 - C++ Programming
 Today was super simple. My first attempt worked in both cases, where the
 hardest part was really switching my ints to long longs. Part 1 worked
