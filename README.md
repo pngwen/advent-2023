@@ -105,3 +105,33 @@ another fast language on nothing! I think I'll keep zig in the hole
 for the next number cruncher.
 
 Oh, and yes my TCL program is still running...
+
+
+# Day 7 - Coming Soon
+
+# Day 8 - Coming Soon
+
+# Day 9 - Algol 68 Programming
+Well, it is the end of the semester and so I have been mired in grading,
+exam writing, and student visits. So I am a little bit behind. I will go
+back and pick up days 7 and 8 momentarily. I decided to go ahead and press
+on with the calendar though just to stay current!
+
+So this felt like an old-school programming challenge. Like the type of
+thing you'd give to a CS student back in the good old days. So I decided
+to code in the granddaddy of modern languages. I did this in Algol-68!
+
+In fact, Algol 68's event driven input handler was quite nice for 
+this task as was its easy ability to detct the ends of lines. of course,
+its lack of built-in data structures meant that I had to whip up
+my own dynamic array, but that's pretty easy too. If you read today's
+code, you'll see familiar threads that influenced C and most of the
+languages that followed it. 
+
+Algol 68 is meant to be a language for publication. It is really tough
+to write a compiler for this language, but it is easy to write 
+self-documenting code. In fact, a lot of textbooks publish algorithms
+in pseudocode that is almost correct Algol 68 code! So I tried to
+write today's solutions with readability in mind. Of course, this
+venerable language is not without its flaws, but I do enjoy coding 
+in it from time to time.
