@@ -1,0 +1,134 @@
+COMMENT
+File: day-9b.a68
+Purpose: Solution to the second problem of day 9 of the advent of code
+         written in the venerable Algol 68 Programming language.
+         https://adventofcode.com/2023/day/9
+Date: 9 December 2023
+COMMENT
+
+#--------------------------------------------------------------------#
+#                     Array List Definition                          #
+#--------------------------------------------------------------------#
+
+# A handy data structure to manage dynamic growth #
+MODE ARRAYLIST = STRUCT (FLEX [0] INT data, INT capacity, INT size);
+
+# Create an array list with an initial capacity of 128 integers. #
+PROC init array list = (REF ARRAYLIST list) VOID:
+BEGIN
+    [128] INT data;
+    data OF list := data;
+    capacity OF list := 128;
+    size OF list := 0
+END;
+
+
+# Double the capacity of the list. #
+PROC grow array list = (REF ARRAYLIST list) VOID:
+BEGIN
+    INT ubound := 1 UPB data OF list;
+    INT capacity := ubound *2;
+    [capacity] INT new;
+
+    FOR i FROM 1 TO ubound
+    DO
+        new[i] := (data OF list)[i]
+    OD;
+
+    data OF list := new;
+    capacity OF list := capacity
+END;
+
+
+# Add an item to the end of the array list #
+PROC append to array list = (REF ARRAYLIST list, INT item) VOID:
+BEGIN
+    size OF list +:= 1;
+    IF size OF list > capacity OF list THEN
+        grow array list(list)
+    FI;
+    (data OF list)[size OF list] := item
+END;
+
+
+# Print an array list. #
+PROC print array list = (REF ARRAYLIST list) VOID:
+BEGIN
+    FOR i FROM 1 TO size OF list
+    DO
+       print ((data OF list)[i])
+    OD;
+    print(new line)
+END;
+
+#--------------------------------------------------------------------#
+
+# Set up the Input Handlers #
+BOOL is eof := FALSE;
+on logical file end(stand in, (REF FILE f) BOOL: ( is eof := TRUE; TRUE ));
+
+
+# Read a line of integers to get the array list #
+PROC read history = ARRAYLIST:
+BEGIN
+    ARRAYLIST result;
+    INT num;
+    init array list(result);
+
+    DO
+        get(stand in, num);
+        IF NOT is eof THEN
+            append to array list(result, num)
+        FI
+        UNTIL end of line(stand in) OR is eof
+    OD;
+
+    result
+END;
+
+# compute the first differential of the list #
+PROC differentiate = (ARRAYLIST list) ARRAYLIST:
+BEGIN
+    ARRAYLIST result;
+
+    init array list(result);
+
+    FOR i FROM 1 TO size OF list - 1
+    DO
+        append to array list(result, 
+                             (data OF list)[i+1]-(data OF list)[i])
+    OD;
+
+    result
+END;
+
+# Extrapolate the next value #
+PROC extrapolate = (ARRAYLIST list) INT:
+BEGIN
+    INT result;
+
+    IF size OF list = 0 THEN
+        result := 0
+    ELIF size OF list = 1 THEN
+        result := (data OF list)[1]
+    ELSE
+        result := (data OF list)[1] - extrapolate(differentiate(list))
+    FI;
+
+    result
+END;
+
+
+ARRAYLIST line;
+INT sum := 0;
+
+WHILE NOT is eof
+DO
+    line := read history;
+    IF size OF line /= 0 THEN
+        sum +:= extrapolate(line)
+    FI
+    UNTIL is eof
+OD;
+
+print((sum, new line))
