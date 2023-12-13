@@ -3,7 +3,6 @@
 --          https://adventofcode.com/2023/day/12
 -- Author: Robert Lowe
 -- Date: 12 December 2023
-inspect=require('inspect')
 
 function parse_input(line)
     local result = {}
