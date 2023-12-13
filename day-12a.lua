@@ -3,24 +3,14 @@
 --          https://adventofcode.com/2023/day/12
 -- Author: Robert Lowe
 -- Date: 12 December 2023
-
-function to_array(itr)
-    local result = {}
-    for item in itr do
-        table.insert(result, item)
-    end
-    return result
-end
-
+inspect=require('inspect')
 
 function parse_input(line)
     local result = {}
 
-    result["report"] = to_array(string.gmatch(line, "([^ ]+) "))[1]
-    result["constraint"] = {}
-    for val in string.gmatch(line, "%d+") do
-        table.insert(result["constraint"], tonumber(val))
-    end
+    result["report"] = string.match(line, "([^ ]+) ")
+    result["constraint"] = string.match(line, " (.+)")
+
     return result
 end
 
@@ -43,7 +33,7 @@ function get_pattern(report)
         table.insert(result, count)
     end
 
-    return result
+    return table.concat(result, ",")
 end
 
 
@@ -52,7 +42,7 @@ function count_ways(report, constraint)
 
     -- handle the situation where we have no replacements
     if string.find(report, "?") == nil then
-        if table.concat(get_pattern(report), ",") == table.concat(constraint, ",") then
+        if get_pattern(report) == constraint then
             return 1
         else
             return 0
